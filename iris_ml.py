@@ -1,9 +1,3 @@
-# =========================
-# Iris Flower Classification
-# Machine Learning Project
-# =========================
-
-# --------- KÜTÜPHANELER ---------
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix
@@ -15,10 +9,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import os
 
-# --------- OUTPUT KLASÖRÜ ---------
 os.makedirs("outputs", exist_ok=True)
 
-# --------- VERİ YÜKLEME ---------
 iris = load_iris()
 
 df = pd.DataFrame(
@@ -29,35 +21,27 @@ df["target"] = iris.target
 
 print(df.head())
 
-# --------- VERİ GÖRSELLEŞTİRME (PAIRPLOT) ---------
 sns.pairplot(df, hue="target")
 plt.savefig("outputs/pairplot.png")
 plt.show()
 
-# --------- ÖZELLİK & HEDEF ---------
 X = df.drop("target", axis=1)
 y = df["target"]
-
-# --------- TRAIN / TEST AYIRMA ---------
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
 )
 
-# --------- MODEL OLUŞTURMA ---------
+
 model = RandomForestClassifier(random_state=42)
 model.fit(X_train, y_train)
-
-# --------- TAHMİN ---------
 y_pred = model.predict(X_test)
 
-# --------- MODEL DEĞERLENDİRME ---------
 accuracy = accuracy_score(y_test, y_pred)
 cm = confusion_matrix(y_test, y_pred)
 
 print("Accuracy:", accuracy)
 print("Confusion Matrix:\n", cm)
 
-# --------- CONFUSION MATRIX GRAFİĞİ ---------
 plt.figure(figsize=(6, 5))
 sns.heatmap(cm, annot=True, fmt="d", cmap="Blues")
 plt.xlabel("Tahmin")
@@ -67,7 +51,6 @@ plt.title("Confusion Matrix")
 plt.savefig("outputs/confusion_matrix.png", bbox_inches="tight")
 plt.show()
 
-# --------- YENİ VERİ İLE TAHMİN ---------
 # Sepal Length, Sepal Width, Petal Length, Petal Width
 yeni_cicek = [[5.1, 3.5, 1.4, 0.2]]
 
@@ -79,7 +62,6 @@ print(
     f"{tahmin_ismi} (Sınıf {tahmin[0]})"
 )
 
-# --------- FEATURE IMPORTANCE ---------
 importances = model.feature_importances_
 feature_names = iris.feature_names
 
@@ -90,7 +72,6 @@ plt.title("Feature Importance")
 plt.savefig("outputs/feature_importance.png", bbox_inches="tight")
 plt.show()
 
-# --------- DECISION TREE (İLK AĞAÇ) ---------
 plt.figure(figsize=(15, 10))
 plot_tree(
     model.estimators_[0],
