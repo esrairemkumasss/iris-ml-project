@@ -113,7 +113,7 @@ daha dengeli bir performans elde edilmiştir.
 
 ---
 
-## 🧠 Ne Öğrendim (What I Learned)
+## 🧠 Ne Öğrendim ?
 
 - Uçtan uca bir makine öğrenmesi sürecinin nasıl kurulduğunu  
 - Keşifsel veri analizi (EDA) için görselleştirmenin önemini  
