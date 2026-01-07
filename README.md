@@ -1,6 +1,13 @@
-# 🌸 Iris Flower Classification (Machine Learning)
+<p align="center">
+  <img src="images/iris_flowers.png" width="700">
+</p>
 
-Bu proje, **Iris veri seti** kullanılarak çiçek türü tahmini yapan temel bir **Makine Öğrenmesi sınıflandırma** uygulamasıdır.  
+<h1 align="center"> Iris Flower Classification </h1>
+
+
+
+🌸 Bu proje, **Iris veri seti** kullanılarak çiçek türü tahmini yapan temel bir  
+**Makine Öğrenmesi (Machine Learning)** sınıflandırma uygulamasıdır.  
 Model olarak **Random Forest Classifier** kullanılmıştır.
 
 ---
@@ -39,7 +46,7 @@ Model olarak **Random Forest Classifier** kullanılmıştır.
 ## 🔍 Proje Akışı
 
 - Veri seti yüklendi ve DataFrame’e dönüştürüldü  
-- Pairplot ile keşifsel veri analizi yapıldı  
+- Pairplot ile keşifsel veri analizi (EDA) yapıldı  
 - Veri %80 eğitim, %20 test olarak ayrıldı  
 - Random Forest modeli eğitildi  
 - Accuracy ve Confusion Matrix ile performans ölçüldü  
@@ -51,39 +58,89 @@ Model olarak **Random Forest Classifier** kullanılmıştır.
 
 ## 📊 Model Çıktıları
 
-### Pairplot
+### Pairplot (Keşifsel Veri Analizi)
 ![Pairplot](outputs/pairplot.png)
+
+Pairplot grafiği, çiçek türlerinin özellikle **petal ölçümleri** üzerinden
+birbirinden net şekilde ayrıldığını göstermektedir.
+Bu görselleştirme, model eğitimi öncesinde hangi özelliklerin daha ayırt edici
+olduğunu anlamaya yardımcı olmuştur.
+
+---
 
 ### Confusion Matrix
 ![Confusion Matrix](outputs/confusion_matrix.png)
 
+Confusion Matrix incelendiğinde, modelin sınıfların büyük çoğunluğunu
+doğru tahmin ettiği görülmektedir.
+Yanlış sınıflandırmaların ağırlıklı olarak **Versicolor** ve **Virginica**
+sınıfları arasında gerçekleştiği gözlemlenmiştir.
+
+---
+
 ### Feature Importance
 ![Feature Importance](outputs/feature_importance.png)
 
-### Decision Tree (Örnek)
+Feature importance analizi, modelin karar verirken en çok
+**Petal Length** ve **Petal Width** özelliklerine ağırlık verdiğini göstermektedir.
+Bu durum, veri seti üzerindeki tür ayrımının büyük ölçüde
+taç yaprak ölçümleri üzerinden gerçekleştiğini doğrulamaktadır.
+
+---
+
+### 🌳 Decision Tree (Örnek)
 ![Decision Tree](outputs/decision_tree.png)
 
----
+- Random Forest modeli, birden fazla karar ağacının birlikte çalışması sayesinde
+tek bir karar ağacına kıyasla **daha kararlı ve genellenebilir** sonuçlar üretmektedir.
 
-## 📈 Model Performansı
+- Bu görselleştirilen ağaç, Random Forest modeli içerisindeki **tek bir karar ağacını**
+temsil etmektedir. Amaç, modelin genel yapısını değil,
+**tekil bir ağacın nasıl karar verdiğini** anlamaktır.
 
-- Accuracy: %95+ (random state’e bağlı olarak değişebilir)
-
-Model, Iris veri seti üzerinde yüksek doğruluk ile çalışmıştır.  
-Özellikle **Petal Length** ve **Petal Width** özelliklerinin sınıflandırmada en etkili faktörler olduğu gözlemlenmiştir.
-
----
-
-## 🚀 Geliştirme Fikirleri
-
-- Farklı algoritmalarla karşılaştırma (KNN, SVM)
-- Cross-validation
-- Hyperparameter tuning
-- Streamlit veya Flask ile web arayüzü
 
 ---
 
+## 📈 Model Performansı ve Yorum
+
+Model, Iris veri seti üzerinde **yüksek doğruluk (%95+)** ile çalışmıştır.  
+Confusion Matrix sonuçları, sınıfların büyük bir kısmının doğru tahmin edildiğini
+göstermektedir.
+
+Random Forest algoritmasının, birden fazla karar ağacının ortak kararıyla
+çalışması sayesinde **overfitting riski azalmış** ve
+daha dengeli bir performans elde edilmiştir.
+
+---
+
+## 🧠 Ne Öğrendim (What I Learned)
+
+- Uçtan uca bir makine öğrenmesi sürecinin nasıl kurulduğunu  
+- Keşifsel veri analizi (EDA) için görselleştirmenin önemini  
+- Random Forest algoritması ile sınıflandırma yapmayı  
+- Confusion Matrix ve accuracy metrikleri ile model değerlendirmeyi  
+- Feature importance analizi ile model kararlarını yorumlamayı  
+- Yeni ve daha önce görülmemiş veriler üzerinde tahmin yapmayı  
+
+---
 ## 👩‍💻 Geliştirici
 
 **Esra Kumas**  
 Machine Learning & Software Development Enthusiast
+
+---
+
+
+<div align="center">
+
+
+⭐ **Bu projeyi faydalı bulduysanız**  
+GitHub üzerinden **star** vermeyi unutmayın! ⭐
+
+<br>
+<a href="#-iris-flower-classification-machine-learning">
+⬆️ <strong>Başa Dön</strong>
+</a>
+
+
+</div>
